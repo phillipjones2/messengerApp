@@ -9,7 +9,7 @@
 <div class="messages">
 
   <div class="container">
-      <%= link_to 'New Message', "messages/new" %>
+
 
     <% @messages.each do |message| %>
     <div class="message">
@@ -23,7 +23,7 @@
 
     </div>
     <% end %>
-    <%= link_to 'New Message', "messages/new" %>
+    <%= link_to 'New Message', new_message_path %>
 
   </div>
 </div>

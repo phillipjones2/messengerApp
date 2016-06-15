@@ -19,17 +19,16 @@
 
 <div class="create">
   <div class="container">
+    <%= form_for(@message) do |f| %>
     <div class="field">
-    <%= form_for(@message) url:  do |f| %>
-
-    		<%= f.label :message %><br>
-    		<%= f.text_field :name, placeholder: "name" %>
-    		<%= f.text_field :email, placeholder: "email" %>
-    		<%= f.text_area :content, placeholder: "message" %>
-    	</div>
-    	<div class="actions">
-    		<%= f.submit "Create" %>
-    	</div>
+    		<%= f.label :message %>
+    		<%= f.text_field :name %>
+    		<%= f.text_field :email %>
+    		<%= f.text_area :content %>
+    </div>
+    <div class="actions">
+    		<%= f.submit "Update" %>
+    </div>
     <% end %>
   </div>
 </div>

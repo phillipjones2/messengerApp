@@ -14,7 +14,8 @@
     	<p class="content"><%= @message.content %></p>
     	<p class="time">created at: <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
     	<p class="time">id: <%= @message.id %></p>
-      <%= link_to 'Back to Messages', :back %>
+      <%= link_to 'edit', edit_message_path %>
+      <%= link_to 'All Messages', all_messages_path %>
     </div>
 
 
