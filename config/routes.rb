@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+
+  root to: 'messages#index'
   get 'messages' => 'messages#index', as: :all_messages
   get 'messages/new' => 'messages#new', as: :new_message
   get '/messages/:id' => 'messages#show', as: :message
   post 'messages' => 'messages#create'
   get '/messages/:id/edit' => 'messages#edit', as: :edit_message
   patch '/messages/:id' => 'messages#update'
-
+  
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
