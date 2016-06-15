@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+    <h1>Messenger</h1>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="container">
+
+    <div class="message">
+    	<p class="content">name:<%= @message.name %></p>
+    	<p class="content">email: <%= @message.email %></p>
+    	<p class="content"><%= @message.content %></p>
+    	<p class="time">created at: <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+    	<p class="time">id: <%= @message.id %></p>
+      <%= link_to 'Back to Messages', :back %>
+    </div>
+
+
+
+  </div>
+</div>
