@@ -1,34 +1,34 @@
-<div class="header">
-  <div class="container">
-    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
-    <h1>Messenger</h1>
-  </div>
-</div>
+<%= render "header" %>
 
-<% if @message.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
- 
-    <ul>
-    <% @message.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= form_for(@message) do |f| %>
+
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@message.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @message.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <div class="create">
   <div class="container">
     <div class="field">
-    <%= form_for(@message) do |f| %>
-    	
+
+
     		<%= f.label :message %><br>
     		<%= f.text_field :name, placeholder: "name" %>
-    		<%= f.text_field :email, placeholder: "email" %>		
-    		<%= f.text_area :content, placeholder: "message" %>	
+    		<%= f.text_field :email, placeholder: "email" %>
+    		<%= f.text_area :content, placeholder: "message" %>
     	</div>
     	<div class="actions">
     		<%= f.submit "Create" %>
+        <%= link_to "Back", messages_path, :class => 'path_links' %>
     	</div>
     <% end %>
   </div>
