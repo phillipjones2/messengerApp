@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root :to => "static#index"
+  root :to => "contacts#new"
+  resources :contacts, only: [:new, :create]
 
   resources :messages do
     resources :comments

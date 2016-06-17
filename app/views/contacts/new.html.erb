@@ -70,6 +70,16 @@
       background-size: cover;
       overflow: hidden;
   }
+  .contact_form {
+      padding-top: 90px;
+  }
+  .email_error {
+    opacity: 0.6;
+    background: rgba(255, 0, 0, 0.3);
+    color: black;
+    padding-left: 20px;
+    border-radius: 5px;
+  }
   </style>
   </head>
 
@@ -114,9 +124,24 @@
         <img class="img-responsive about-pic" src="http://gdriv.es/pjimg/photobomber.jpg" alt="picture of me" />
       </div>
       <div class="col-xs-8">
-        <h1 class="jumbo-h1">About</h1>
+        <h1 class="jumbo-h1">Phillip Emerson Jones</h1>
         <p>Web/Software Development Professional</p>
         <p>Next level photobomber!</p>
+        <div class="email_error">
+        <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@contact.errors.count, "error") %>
+              prohibited this message from being sent:
+            </h2>
+            <ul>
+              <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        </div>
       </div>
 
     </div>
@@ -130,7 +155,7 @@
       <div class="col-xs-3 col-xs-offset-3 ">
         <a href="messages#index"> <h2 class="portfolio-img1"> ruby on rails message app</h2>
       </div>
-      <div class="col-xs-4 ">
+      <div class="col-xs-3 ">
         <img class="portfolio-img" src="http://gdriv.es/pjimg/02.jpg" alt="" />
       </div>
     </div>
@@ -138,7 +163,7 @@
       <div class="col-xs-3 col-xs-offset-3 ">
         <img class="portfolio-img" src="http://gdriv.es/pjimg/03.jpg" alt="" />
       </div>
-      <div class="col-xs-4 ">
+      <div class="col-xs-3 ">
         <img class="portfolio-img" src="http://gdriv.es/pjimg/04.jpg" alt="" />
       </div>
     </div>
@@ -150,19 +175,31 @@
 <div id="contact" class="jumbotron-3">
   <div class="container">
     <div class="row">
-      <div class="col-xs-8">
+      <div class="col-xs-4">
         <h1 class="jumbo-h1">Contact</h1>
         <p>phillip@phillipemersonjones.com</p>
         <p>shoot me a line</p>
       </div>
+      <div class="col-xs-6 contact_form">
+        <%= form_for(@contact) do |f| %>
+
+    		<%= f.text_field :name, placeholder: "name" %>
+    		<%= f.text_field :email, placeholder: "email" %>
+    		<%= f.text_area :content, placeholder: "message" %>
+    		<%= f.submit "Create", class:'btn' %>
+      </div>
+      <% end %>
     </div>
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <a href="https://www.linkedin.com/in/phillipjones2" target="_blank"><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></a>
         <a href="https://www.facebook.com/profile.php?id=100006745729075" target="_blank"><i class="fa fa-facebook-official fa-4x" aria-hidden="true"></i></a>
         <a href="https://github.com/phillipjones2" target="_blank"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>
+
+
       </div>
     </div>
+
   </div>
   <a href="#about"><i class="about-arrow fa fa-arrow-circle-up fa-4x text-center" aria-hidden="true"></i></a>
 </div>
@@ -185,8 +222,6 @@ $(document).ready(function(){
       });
   });
 });
-
+</script>
   </body>
-
-  </script>
 </html>
