@@ -60,7 +60,16 @@
       color: black;
       padding-top: 20px;
       padding-left: 10px;
-      font-family: monospace;)
+      font-family: monospace;
+  }
+  .portfolio-img2 {
+    height: 250px;
+    width: 250px;
+    background: #000 url("http://gdriv.es/pjimg/02.jpg");
+    color: black;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-family: monospace;
   }
   .jumbotron-3 {
       position: relative;
@@ -152,12 +161,18 @@
   <div class="container">
     <h1 class="text-center portfolio">Portfolio</h1>
     <div class="row">
-      <div class="col-xs-3 col-xs-offset-3 ">
-        <a href="messages#index"> <h2 class="portfolio-img1"> ruby on rails message app</h2>
-      </div>
-      <div class="col-xs-3 ">
-        <img class="portfolio-img" src="http://gdriv.es/pjimg/02.jpg" alt="" />
-      </div>
+        <div class="col-xs-3 col-xs-offset-3 ">
+          <a href="messages#index">
+            <h2 class="portfolio-img1"> ruby on rails message app
+          </h2>
+        </a>
+        </div>
+
+      <a href="todos#index">
+        <div class="col-xs-3 ">
+          <h2 class="portfolio-img2">ruby on rails todo</h2></a>
+        </div>
+      </a>
     </div>
     <div class="row">
       <div class="col-xs-3 col-xs-offset-3 ">
@@ -186,7 +201,7 @@
     		<%= f.text_field :name, placeholder: "name" %>
     		<%= f.text_field :email, placeholder: "email" %>
     		<%= f.text_area :content, placeholder: "message" %>
-    		<%= f.submit "Create", class:'btn' %>
+    		<%= f.submit "Submit", class:'btn' %>
       </div>
       <% end %>
     </div>

@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-m1 = Message.create(content: "We're at the beach so you should meet us here! I make a mean sandcastle. :)")
-
-m2 = Message.create(content: "Let's meet there!")
-
-m3 = Message.create(name: "Phillip Jones", email: "phillip@gan.com", content: "test")
+Todo.create!(title: 'grocery shopping', notes: 'pickles, eggs, red onion')
+Todo.create!(title: 'wash the car')
+Todo.create!(title: 'register kids for school', notes: 'Register Kira for Ruby Junior High and Caleb for Rails High School')
+Todo.create!(title: 'check engine light', notes: 'The check engine light is on in the Tacoma')
+Todo.create!(title: 'dog groomers', notes: 'Take Pinky and Redford to the groomers on Wednesday the 23rd')

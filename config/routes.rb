@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :todos
+
   # get 'messages'            => 'messages#index', as: :all_messages
   # get 'messages/new'        => 'messages#new', as: :new_message
   # get '/messages/:id'       => 'messages#show', as: :message

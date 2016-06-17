@@ -1,0 +1,22 @@
+<%= render "todoNav" %>
+<%= render "todoLayoutTop" %>
+
+<p id="notice"><%= notice %></p>
+<div class="container container-fluid">
+  <h2>Todo</h2>
+  <div class="row">
+    <p class="col-sm-2"><strong>Title:</strong></p>
+    <p class="col-sm-10"><%= @todo.title %></p>
+  </div>
+  <div class="row">
+    <p class="col-sm-2"><strong>Notes:</strong>
+    <p class="col-sm-10"><%= @todo.notes %></p>
+  </div>
+  <div class="row ">
+    <%= link_to edit_todo_path(@todo), class: "btn btn-xs btn-primary" do %>
+      <i class="fa fa-pencil"></i>
+    <% end %> |
+    <%= link_to 'Back', todos_path, class: "btn btn-xs btn-primary" %>
+  </div>
+  <%= render "todoLayoutBottom" %>
+</div>
