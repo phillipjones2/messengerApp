@@ -1,3 +1,83 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron-1 {
+    position: relative;
+    background: #000 url("https://images.unsplash.com/photo-1462819067004-905a72ea3996?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=4832f28a526c7a3538a887b8fbbfe897") center center;
+    width: 100%;
+    height: 850px;
+    background-size: cover;
+    overflow: hidden;
+}
+.jumbo-h1 {
+  padding-top: 50px
+}
+.about-pic {
+  padding-top: 100px;
+  border-radius: 100%;
+}
+.about-arrow {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+.navbar li { color: #000 }
+.jumbotron-2 {
+    margin-top: -29px;
+    position: relative;
+    background: #000 url("https://images.unsplash.com/photo-1453498798285-d5a1be7fab6e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=da974c1e8df6eb917d6fa673b983f625") center center;
+    width: 100%;
+    height: 850px;
+    background-size: cover;
+    overflow: hidden;
+}
+.portfolio {
+  padding-top: 20px;
+  font-size: 50px;
+}
+.portfolio-img {
+  height: 250px;
+  width: 250px;
+}
+.portfolio-img1 {
+    height: 250px;
+    width: 250px;
+    background: #000 url("http://gdriv.es/pjimg/01.jpg");
+    color: black;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-family: monospace;
+}
+.portfolio-img2 {
+  height: 250px;
+  width: 250px;
+  background: #000 url("http://gdriv.es/pjimg/02.jpg");
+  color: black;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-family: monospace;
+}
+.jumbotron-3 {
+    position: relative;
+    background: #000 url("https://images.unsplash.com/photo-1428189923803-e9801d464d76?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=40e43c26d48dfcaaf80670e1639c1af7") center center;
+    width: 100%;
+    height: 850px;
+    background-size: cover;
+    overflow: hidden;
+}
+.contact_form {
+    padding-top: 90px;
+}
+.email_error {
+  opacity: 0.6;
+  background: rgba(255, 0, 0, 0.3);
+  color: black;
+  padding-left: 20px;
+  border-radius: 5px;
+}

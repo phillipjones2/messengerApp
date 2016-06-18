@@ -54,13 +54,21 @@
           </button>
           <% end %>
         </td>
+
+
         <td><%= link_to todo, class: "btn btn-xs btn-primary" do %>
           <i class="fa fa-eye"></i>
           <% end %></td>
-        <td><%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary" do %>
+
+
+
+      <td><%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary", data: { modal: true } do %>
           <i class="fa fa-pencil"></i>
       <% end %>
         </td>
+
+
+
         <td><%= link_to todo, method: :delete,
                 data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
                 <i class="fa fa-trash"></i>

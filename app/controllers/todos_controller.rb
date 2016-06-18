@@ -1,4 +1,5 @@
 class TodosController < ApplicationController
+  respond_to :html, :json
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   # GET /todos
@@ -19,6 +20,7 @@ class TodosController < ApplicationController
 
   # GET /todos/1/edit
   def edit
+
   end
 
   # POST /todos
