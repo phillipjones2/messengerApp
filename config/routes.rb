@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   resources :todos
 
+  get '/movies', to: 'movies#index', as: :movies
+  get '/movies/:id', to: 'movies#show', as: :movie
+
+  get '/actors', to: 'actors#index', as: :actors
+  get '/actors/:id', to: 'actors#show', as: :actor
+
   # get 'messages'            => 'messages#index', as: :all_messages
   # get 'messages/new'        => 'messages#new', as: :new_message
   # get '/messages/:id'       => 'messages#show', as: :message

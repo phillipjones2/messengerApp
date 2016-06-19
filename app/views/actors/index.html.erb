@@ -1,0 +1,23 @@
+<%= render "movies/navMovies" %>
+<div class="container">
+<div class="jumbotron">
+  <h1>Actor</h1>
+  <p class="lead">mov·ie (mo͞o′vē)</p>
+  <p><%= link_to "Movies", movies_path(), class:"btn btn-lg btn-success" %></p>
+</div>
+
+<div class="row">
+  <% @actors.each do |a|%>
+  <div class="col-md-6">
+    <h4><%= a.first_name %><%= a.last_name %></h4>
+    <p><%= a.bio %></p>
+    <%= link_to 'Learn more', a %>
+  </div>
+  <% end %>
+</div>
+
+  <div class="jumbotron">
+    <h1>Actor</h1>
+    <p><%= link_to "Movies", movies_path(), class:"btn btn-lg btn-success" %></p>
+  </div>
+  </div>

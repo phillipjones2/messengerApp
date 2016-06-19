@@ -3,7 +3,11 @@
    <li><%= link_to "View list", todos_path %></li>
    <li class="active"><%= link_to "New todo", new_todo_path %></li>
  </ul>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-1">
+    <h1>New Todo</h1>
+  </div>
+</div>
 
-<h1>New Todo</h1>
 
 <%= render 'form' %>

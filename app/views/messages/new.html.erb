@@ -1,20 +1,20 @@
-<%= render "header" %>
-
-<%= form_for(@message) do |f| %>
-
-<div class="create">
-  <div class="container">
-    <%= render "errors" %>
-    <div class="field">
-    		<%= f.label :message %><br>
-    		<%= f.text_field :name, placeholder: "name" %>
-    		<%= f.text_field :email, placeholder: "email" %>
-    		<%= f.text_area :content, placeholder: "message" %>
-    </div>
-    <div class="actions">
-    		<%= f.submit "Create" %>
+<%= render "movies/navMovies" %>
+<div class="container">
+  <%= form_for(@message) do |f| %>  
+  <div class="create">
+    <div class="container">
+      <%= render "errors" %>
+      <div class="field">
+        <%= f.label :message %><br>
+        <%= f.text_field :name, placeholder: "name" %>
+        <%= f.text_field :email, placeholder: "email" %>
+        <%= f.text_area :content, placeholder: "message" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Create" %>
         <%= link_to "Back", messages_path, :class => 'path_links' %>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>

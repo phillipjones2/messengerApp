@@ -1,9 +1,12 @@
 <%= render "todoNav" %>
+
 <%= render "todoLayoutTop" %>
 
 <h1>Editing Todo</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @todo %>
+<%= link_to 'Show', @todo, class:"btn bnt-xs btn-primary" %>
+
+
 <%= render "todoLayoutBottom" %>

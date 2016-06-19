@@ -1,22 +1,40 @@
-<%= render "header" %>
-
+<%= render "movies/navMovies" %>
+<div class="container">
 <div class="messages">
-
-  <div class="container">
-
-    <%= link_to 'New Message', new_message_path %>
+  <div class="container container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-xs-offset-2">
+        <%= link_to 'New Message', new_message_path, class:"btn" %>
+      </div>
+    </div>
     <% @messages.each do |message| %>
-    <div class="message">
-    	<p class="content">name:<%= message.name %></p>
-    	<p class="content">email: <%= message.email %></p>
-    	<p class="content"><%= message.content %></p>
+    <div class="message row ">
+      <div class="col-xs-10 col-xs-offset-2">
+        <p class="content">name:<%= message.name %></p>
+        <p class="content">email: <%= message.email %></p>
+      </div>
+    </div>
+    <div class="message row">
+      <div class="col-xs-6 col-xs-offset-2">
+    	   <p class="content"><%= message.content %></p>
+      </div>
+    </div>
+    <div class="message row">
+      <div class="col-xs-6 col-xs-offset-2">
     	<p class="time">created at: <%= message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
-      <%= link_to "see message", message_path(message) %>
-
-
+      </div>
+    </div>
+    <div class="message row">
+      <div class="col-xs-6 col-xs-offset-2">
+      <%= link_to "see message", message_path(message), class:"btn" %>
+      </div>
     </div>
     <% end %>
-    <%= link_to 'New Message', new_message_path %>
-
+    <div class="message row">
+      <div class="col-xs-6 col-xs-offset-2">
+        <%= link_to 'New Message', new_message_path, class:'btn' %>
+      </div>
+    </div>
   </div>
+</div>
 </div>

@@ -1,10 +1,10 @@
 <%= render "todoNav" %>
- <ul class="nav nav-tabs" role="tablist">
-   <li class="active">
-     <%= link_to "View list", todos_path %>
-   </li>
-   <li><%= link_to "New todo", new_todo_path %></li>
- </ul>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active">
+    <%= link_to "View list", todos_path %>
+  </li>
+  <li><%= link_to "New todo", new_todo_path %></li>
+</ul>
 
 <%= render "todoLayoutTop" %>
 
@@ -21,67 +21,70 @@
 
   <tbody>
     <% @todos.each do |todo| %>
-      <tr>
-        <td>
-          <span class="has-tooltip" data-toggle="tooltip"
-                title="<%= "Created on #{todo.created_at.strftime("%m/%e/.%Y at %w:%M %p")}               Last modified on #{todo.updated_at.strftime("%m/%e/.%Y at %w:%M %p")}" %>">
-            <%= todo.title %></td>
-          </span>
-        <td><% if todo.notes? %>
-            <!-- Button trigger modal -->
-            <button class="btn btn-link" data-toggle="modal" data-target="#todo-<%= todo.id %>-notes">
-              View notes (modal)
-            </button>
+    <tr>
+      <td>
+        <span class="has-tooltip" data-toggle="tooltip"
+        title="<%= "Created on #{todo.created_at.strftime("%m/%e/.%Y at %w:%M %p")}               Last modified on #{todo.updated_at.strftime("%m/%e/.%Y at %w:%M %p")}" %>">
+        <%= todo.title %></td>
+      </span>
+      <td>
+        <% if todo.notes? %>
+        <span class="has-tooltip" data-toggle="tooltip" title="<%= todo.notes %>" >
+          <!-- Button trigger modal -->
+          <button class="btn btn-link" data-toggle="modal" data-target="#todo-<%= todo.id %>-notes">
+            View notes
+          </button>
+        </span>
 
-            <!-- Modal -->
-            <div class="modal fade" id="todo-<%= todo.id %>-notes" tabindex="-1" role="dialog" aria-labelledby="todo-<%= todo.id %>-label" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title" id="todo-<%= todo.id %>-label">Notes</h4>
-                  </div>
-                  <div class="modal-body">
-                    <%= todo.notes %>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
+        <!-- Modal -->
+        <div class="modal fade" id="todo-<%= todo.id %>-notes" tabindex="-1" role="dialog" aria-labelledby="todo-<%= todo.id %>-label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="todo-<%= todo.id %>-label">Notes</h4>
+              </div>
+              <div class="modal-body">
+                <%= todo.notes %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">Close</button>
               </div>
             </div>
-          <button type="button" class="btn btn-link has-popover" data-toggle="popover" title="Notes" data-content='<%= todo.notes %>'>
-            View notes (popover)
-          </button>
-          <% end %>
-        </td>
+          </div>
+        </div>
 
+        <% end %>
+      </td>
 
-        <td><%= link_to todo, class: "btn btn-xs btn-primary" do %>
-          <i class="fa fa-eye"></i>
+      <td><%= link_to todo, class: "btn btn-xs btn-primary" do %>
+        <span class="has-tooltip" data-toggle="tooltip" title="Show todo" >
+          <i class="fa fa-eye"></i></span>
           <% end %></td>
 
+          <td>
 
+              <%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary", data: { modal: true } do %>
+              <span class="has-tooltip" data-toggle="tooltip" title="Edit todo" >
+              <i class="fa fa-pencil"></i></span>
+              <% end %>
+            </td>
 
-      <td><%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary", data: { modal: true } do %>
-          <i class="fa fa-pencil"></i>
-      <% end %>
-        </td>
+            <td>
 
-
-
-        <td><%= link_to todo, method: :delete,
+                <%= link_to todo, method: :delete,
                 data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
-                <i class="fa fa-trash"></i>
+  <span class="has-tooltip" data-toggle="tooltip" title="Delete todo" >
+                <i class="fa fa-trash"></i></span>
+                <% end %>
+              </td>
+            </tr>
             <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </tbody>
+        </table>
 
-<br>
+        <br>
 
-<%= link_to new_todo_path, class: 'btn btn-xs btn-success' do %>
-  <i class="fa fa-plus"></i> New Todo
-<% end %>
-<%= render "todoLayoutBottom" %>
+        <%= link_to new_todo_path, class: 'btn btn-xs btn-success' do %>
+        <i class="fa fa-plus"></i> New Todo
+        <% end %>
+        <%= render "todoLayoutBottom" %>

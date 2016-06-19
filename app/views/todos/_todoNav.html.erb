@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
+  <div class="container todo_nav">
     <div class="navbar-header">
-      <a class='navbar-barnd' href="#">Phillip Emerson Jones</a>
+      <a class='navbar-brand' href="#">Phillip Emerson Jones</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to 'Main', root_url %></li>
@@ -9,11 +9,13 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu
           <span class="caret"></span></a>
         <ul class="dropdown-menu" role='menu'>
-          <li><a href="#">Login</a></li>
+          <li><%= link_to "Movie app", movies_path %></li>
+          <li><%= link_to "Message app", messages_path %></li>
           <li class="divider"></li>
           <li><%= link_to "Create a todo", new_todo_path %></li>
         </ul>
       </li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
   </div>
 </nav>

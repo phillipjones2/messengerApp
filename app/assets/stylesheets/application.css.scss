@@ -15,4 +15,13 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "bootstrap-modal";
+.form-control {
+  width: 90%;
+  margin-left: 10px;
+}
+.control-label {
+  margin-left: 10px;
+}
+.actions {
+  margin-left: 10px;
+}
