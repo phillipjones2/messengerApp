@@ -1,12 +1,11 @@
 <%= render "todoNav" %>
+<%= render "todoLayoutTop" %>
 <ul class="nav nav-tabs" role="tablist">
   <li class="active">
     <%= link_to "View list", todos_path %>
   </li>
   <li><%= link_to "New todo", new_todo_path %></li>
 </ul>
-
-<%= render "todoLayoutTop" %>
 
 <h1>Listing Todos</h1>
 
@@ -58,33 +57,26 @@
 
       <td><%= link_to todo, class: "btn btn-xs btn-primary" do %>
         <span class="has-tooltip" data-toggle="tooltip" title="Show todo" >
-          <i class="fa fa-eye"></i></span>
-          <% end %></td>
+          <i class="fa fa-eye"></i></span><% end %>
 
-          <td>
+          <%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary", data: { modal: true } do %>
+          <span class="has-tooltip" data-toggle="tooltip" title="Edit todo" >
+            <i class="fa fa-pencil"></i></span><% end %>
 
-              <%= link_to edit_todo_path(todo), class: "btn btn-xs btn-primary", data: { modal: true } do %>
-              <span class="has-tooltip" data-toggle="tooltip" title="Edit todo" >
-              <i class="fa fa-pencil"></i></span>
+            <%= link_to todo, method: :delete,
+            data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
+            <span class="has-tooltip" data-toggle="tooltip" title="Delete todo" >
+              <i class="fa fa-trash"></i></span>
               <% end %>
             </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
 
-            <td>
+      <br>
 
-                <%= link_to todo, method: :delete,
-                data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
-  <span class="has-tooltip" data-toggle="tooltip" title="Delete todo" >
-                <i class="fa fa-trash"></i></span>
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-        <br>
-
-        <%= link_to new_todo_path, class: 'btn btn-xs btn-success' do %>
-        <i class="fa fa-plus"></i> New Todo
-        <% end %>
-        <%= render "todoLayoutBottom" %>
+      <%= link_to new_todo_path, class: 'btn btn-xs btn-success' do %>
+      <i class="fa fa-plus"></i> New Todo
+      <% end %>
+      <%= render "todoLayoutBottom" %>
