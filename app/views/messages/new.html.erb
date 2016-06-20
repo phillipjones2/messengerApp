@@ -1,20 +1,23 @@
-<%= render "movies/navMovies" %>
+<%= render "todos/todoNav" %>
+
 <div class="container">
-  <%= form_for(@message) do |f| %>  
-  <div class="create">
-    <div class="container">
-      <%= render "errors" %>
-      <div class="field">
-        <%= f.label :message %><br>
-        <%= f.text_field :name, placeholder: "name" %>
-        <%= f.text_field :email, placeholder: "email" %>
-        <%= f.text_area :content, placeholder: "message" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Create" %>
-        <%= link_to "Back", messages_path, :class => 'path_links' %>
-      </div>
-      <% end %>
-    </div>
+
+
+  <div class="sub-nav">
+    <ul class="nav nav-tabs" role="tablist">
+      <li>
+        <%= link_to "Messages", messages_path %>
+      </li>
+      <li class="active"><%= link_to "Create Message", new_message_path %></li>
+    </ul>
   </div>
-</div>
+
+<%= render "todos/todoLayoutTop" %>
+
+<h1>Create Message</h1>
+
+<%= render "form" %>
+
+
+
+<%= render "todos/todoLayoutBottom" %>

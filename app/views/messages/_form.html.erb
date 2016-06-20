@@ -1,0 +1,27 @@
+<%= simple_form_for(@message, html: { class: 'form-horizontal' }) do |f| %>
+
+  <%= render "errors" %>
+
+<div class="field form-group row">
+    <div class="col-md-2">
+      <%= f.input :name, label: false, placeholder: "name", class: ' control-label' %>
+    </div>
+    <div class="col-md-2">
+      <%= f.input :email, label: false, placeholder: "email", class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group row">
+    <div class="col-md-4">
+      <%= f.input :content, label: false, placeholder: "message", :input_html => {:rows => 10, :cols => 50}, class: 'control-label' %>
+    </div>
+  </div>
+  <div class="actions form-group row">
+    <div class="col-md-4">
+
+      <%= f.submit class:'btn btn-success' %>
+
+
+      <%= link_to 'Back', messages_path, class:'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

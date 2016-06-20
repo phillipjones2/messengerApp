@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/movies', to: 'movies#index', as: :movies
   get '/movies/:id', to: 'movies#show', as: :movie
 
+  resources :movies do
+    resources :movie_quotes
+  end
+
   get '/actors', to: 'actors#index', as: :actors
   get '/actors/:id', to: 'actors#show', as: :actor
 

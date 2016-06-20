@@ -1,40 +1,64 @@
-<%= render "movies/navMovies" %>
+<%= render "todos/todoNav" %>
+
 <div class="container">
-<div class="messages">
-  <div class="container container-fluid">
+
+
+  <div class="sub-nav">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active">
+        <%= link_to "Messages", messages_path %>
+      </li>
+      <li><%= link_to "Create Message", new_message_path %></li>
+    </ul>
+  </div>
+
+  <%= render "todos/todoLayoutTop" %>
+
+  <% @messages.each do |message| %>
+  <div class="panel panel-default">
+
+    <div class="row ">
+      <div class="col-xs-1">
+        <%= link_to message, class: "btn btn-xs btn-primary" do %>
+        <span class="has-tooltip" data-toggle="tooltip" title="Show Message" >
+          <i class="fa fa-eye"></i></span><% end %>
+      </div>
+      <div class="col-md-2 col-xs-4">
+          <p><strong>Name: </strong> <%= message.name %></p>
+      </div>
+      <div class="col-md-9 col-xs-7">
+          <p><strong>E-Mail: </strong><%= message.email %></p>
+      </div>
+    </div>
     <div class="row">
-      <div class="col-xs-12 col-xs-offset-2">
-        <%= link_to 'New Message', new_message_path, class:"btn" %>
+      <div class="col-xs-1">
+            <%= link_to edit_message_path(message), class: "btn btn-xs btn-primary", data: { modal: true } do %>
+            <span class="has-tooltip" data-toggle="tooltip" title="Edit Message" >
+              <i class="fa fa-pencil"></i></span><% end %>
+      </div>
+      <div class="col-xs-11">
+          <p><strong>Message:</strong> <%= message.content %></p>
       </div>
     </div>
-    <% @messages.each do |message| %>
-    <div class="message row ">
-      <div class="col-xs-10 col-xs-offset-2">
-        <p class="content">name:<%= message.name %></p>
-        <p class="content">email: <%= message.email %></p>
+    <div class="row ">
+      <div class="col-xs-1">
+              <%= link_to message, method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
+              <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
+                <i class="fa fa-trash"></i></span><% end %>
+      </div>
+      <div class="col-xs-11">
+          <p><strong>created at:</strong> <%= message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
       </div>
     </div>
-    <div class="message row">
-      <div class="col-xs-6 col-xs-offset-2">
-    	   <p class="content"><%= message.content %></p>
-      </div>
-    </div>
-    <div class="message row">
-      <div class="col-xs-6 col-xs-offset-2">
-    	<p class="time">created at: <%= message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
-      </div>
-    </div>
-    <div class="message row">
-      <div class="col-xs-6 col-xs-offset-2">
-      <%= link_to "see message", message_path(message), class:"btn" %>
-      </div>
-    </div>
-    <% end %>
-    <div class="message row">
-      <div class="col-xs-6 col-xs-offset-2">
-        <%= link_to 'New Message', new_message_path, class:'btn' %>
+    <div class="row ">
+      <div class="col-md-1">
+          <%= link_to new_message_path, class:"btn btn-xs btn-success" do %>
+                <span class="has-tooltip" data-toggle="tooltip" title="Create New Message" >
+                  <i class="fa fa-plus"></i></span><% end %>
       </div>
     </div>
   </div>
-</div>
-</div>
+  <% end %>
+
+          <%= render "todos/todoLayoutBottom" %>

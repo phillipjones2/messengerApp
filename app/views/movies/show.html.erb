@@ -17,11 +17,24 @@
   </div>
   <% end %>
 </div>
+<div class="jumbotron">
+  <%= simple_form_for([@movie, @movie.movie_quotes.build],{class:'form-inline'}) do |f| %>
+  <h3>What's your favorite quote from</h3>
 
-  <div class="jumbotron">
-    <h1><%= @movie.title %></h1>
+      <h1> <%= @movie.title %></h1>
+      <%= f.input :source, label: false, placeholder: 'source' %>
 
-    <%= link_to "All Movies", movies_path(), class:"btn btn-lg btn-success" %>
-    <%= link_to "All Actors", actors_path(), class:"btn btn-lg btn-success" %>
+  <p><%= f.button :submit, 'Add your favorite movie quote', class:'btn btn-success' %></p>
+      <%= f.input :quote, label: false, placeholder: 'quote' %>
+  <%= link_to 'All Movies', movies_path(), class:"btn btn-success" %>
+  <%= link_to 'All Actors', actors_path(), class:"btn btn-success" %>
+</div>
+<% end %>
+<div class="row ">
+  <% @movie.movie_quotes.each do |q| %>
+  <div class="col-md-6">
+    <h4><%= q.quote %></h4>
+    <p>-<%= q.source %></p>
   </div>
-  </div>
+  <% end %>
+</div>
