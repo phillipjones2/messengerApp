@@ -21,7 +21,11 @@
   <%= simple_form_for([@movie, @movie.movie_quotes.build],{class:'form-inline'}) do |f| %>
   <h3>What's your favorite quote from</h3>
 
-      <h1> <%= @movie.title %></h1>
+      <h1>
+        <%= @movie.title %>
+        <i class="fa fa-quote-left" aria-hidden="true"></i>
+        <i class="fa fa-quote-right" aria-hidden="true"></i>
+      </h1>
       <%= f.input :source, label: false, placeholder: 'source' %>
 
   <p><%= f.button :submit, 'Add your favorite movie quote', class:'btn btn-success' %></p>

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get '/actors', to: 'actors#index', as: :actors
   get '/actors/:id', to: 'actors#show', as: :actor
 
+  get "/about", to: "static#new", as: :about
+  get "/resume", to: "static#resume", as: :resume
+
   # get 'messages'            => 'messages#index', as: :all_messages
   # get 'messages/new'        => 'messages#new', as: :new_message
   # get '/messages/:id'       => 'messages#show', as: :message

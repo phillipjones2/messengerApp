@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :movie_params, only: [:create, :update]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.all.sort_by &:release_year
   end
 
   def show
