@@ -7,9 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+  <div class="container">
 
-<%= yield %>
+    <div class="row">
+      <div class="col-xs-12">
+          <% flash.each do |name, msg| %>
+          <% alert_class = case name
+                            when :notice then "success"
+                            when :alert then "danger"
+                            else name end %>
+            <%= content_tag :div, class: "alert alert-#{alert_class}" do %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <%= msg %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
+    <%= yield %>
+
+  </div>
+  <!-- /container -->
 </body>
 </html>
