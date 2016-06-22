@@ -6,9 +6,9 @@
   <div class="sub-nav">
     <ul class="nav nav-tabs" role="tablist">
       <li class="active">
-        <%= link_to "Messages", messages_path %>
+        <%= link_to "Blogs", messages_path %>
       </li>
-      <li><%= link_to "Create Message", new_message_path %></li>
+      <li><%= link_to "Create Blog", new_message_path %></li>
     </ul>
   </div>
 
@@ -20,31 +20,29 @@
     <div class="row ">
       <div class="col-xs-1">
         <%= link_to message, class: "btn btn-xs btn-primary" do %>
-        <span class="has-tooltip" data-toggle="tooltip" title="Show Message" >
+        <span class="has-tooltip" data-toggle="tooltip" title="Show Blog" >
           <i class="fa fa-eye"></i></span><% end %>
       </div>
-      <div class="col-md-2 col-xs-4">
-          <p><strong>Name: </strong> <%= message.name %></p>
+      <div class="col-md-4 col-xs-4">
+          <p><strong>Title: </strong> <%= message.name %></p>
       </div>
-      <div class="col-md-9 col-xs-7">
-          <p><strong>E-Mail: </strong><%= message.email %></p>
-      </div>
+
     </div>
     <div class="row">
       <div class="col-xs-1">
             <%= link_to edit_message_path(message), class: "btn btn-xs btn-primary", data: { modal: true } do %>
-            <span class="has-tooltip" data-toggle="tooltip" title="Edit Message" >
+            <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
               <i class="fa fa-pencil"></i></span><% end %>
       </div>
       <div class="col-xs-11">
-          <p><strong>Message:</strong> <%= message.content %></p>
+          <p> <%= message.content %></p>
       </div>
     </div>
     <div class="row ">
       <div class="col-xs-1">
               <%= link_to message, method: :delete,
               data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
-              <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
+              <span class="has-tooltip" data-toggle="tooltip" title="Delete Blog" >
                 <i class="fa fa-trash"></i></span><% end %>
       </div>
       <div class="col-xs-11">
@@ -54,7 +52,7 @@
     <div class="row ">
       <div class="col-md-1">
           <%= link_to new_message_path, class:"btn btn-xs btn-success" do %>
-                <span class="has-tooltip" data-toggle="tooltip" title="Create New Message" >
+                <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
                   <i class="fa fa-plus"></i></span><% end %>
       </div>
     </div>
