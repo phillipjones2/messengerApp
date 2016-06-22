@@ -1,11 +1,12 @@
 class MessagesController < ApplicationController
+	before_action :set_message, only: [:show, :edit, :update, :destroy]
+
 
 	def index
 		@messages = Message.all
 	end
 
 	def show
-		@message = Message.find(params[:id])
 	end
 
 	def new
@@ -13,37 +14,52 @@ class MessagesController < ApplicationController
 	end
 
 	def edit
-		@message = Message.find(params[:id])
 	end
 
 	def create
 		@message = Message.new(message_params)
-
-		if @message.save
-			redirect_to @message
-		else
-			render 'new'
+		respond_to do |format|
+			if @message.save
+				flash[:success] = 'Message was successfully created.'
+				format.html { redirect_to @message}
+				format.json { render :show, status: :created, location: @message }
+			else
+				flash[:danger] = 'There was a problem creating the Message'
+				format.html { render :new }
+				format.json { render json: @message.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 
 	def update
-		@message = Message.find(params[:id])
-
-		if @message.update(message_params)
-			redirect_to @message
-		else
-			render 'edit'
+		respond_to do |format|
+			if @message.update(message_params)
+				flash[:success] = 'Message was successfully updated.'
+				format.html { redirect_to @message}
+				format.json { render :show, status: :created, location: @message }
+			else
+				flash[:danger] = 'There was a problem updating the Message'
+				format.html { render :new }
+				format.json { render json: @message.errors, status: :unprocessable_entity }
+			end
 		end
 	end
 
 	def destroy
-		@message = Message.find(params[:id])
 		@message.destroy
-
-		redirect_to messages_path
-	end
+		respond_to do |format|
+      flash[:success] = 'Todo was successfully destroyed.'
+      format.html { redirect_to messages_path }
+      format.json { head :no_content }
+    end
+  end
 
 	private
+
+	# Use callbacks to share common setup or constraints between actions.
+	def set_message
+		@message = Message.find(params[:id])
+	end
 
 	def message_params
 		params.require(:message).permit(:name, :email, :content)
