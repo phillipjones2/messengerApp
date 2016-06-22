@@ -13,52 +13,46 @@
   </div>
 
 <%= render "todos/todoLayoutTop" %>
-
+  <!-- BLOG SECTION     -->
     <div class="row ">
       <div class="col-md-1">
-        <%= link_to new_message_path, class:"btn btn-xs btn-success" do %>
+
+        <%= link_to new_message_path, class:"btn btn-xs btn-success top-buffer" do %>
         <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
-          <i class="fa fa-plus"></i></span>
+          <i class="fa fa-plus"></i></span><br>
         <% end %>
 
-      </div>
-      <div class="col-md-2">
-        <p><strong>Title: </strong> <%= @message.name %></p>
-      </div>
-    </div>
-
-    <div class="row ">
-      <div class="col-md-1">
-        <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary", data: { modal: true } do %>
+        <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary top-buffer", data: { modal: true } do %>
               <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
-              <i class="fa fa-pencil"></i></span>
+              <i class="fa fa-pencil"></i></span><br>
               <% end %>
-      </div>
-      <div class="col-md-4">
-        <p> <%= @message.content %></p>
-      </div>
-    </div>
 
-    <div class="row ">
-      <div class="col-md-1">
         <%= link_to @message, method: :delete,
-                data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
-        <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
-          <i class="fa fa-trash"></i></span>
-        <% end %>
-      </div>
-      <div class="col-md-4">
-        <p><strong>created at:</strong> <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
-      </div>
-    </div>
-
-
-    <div class="row ">
-      <div class="col-md-1">
+                      data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger top-buffer" do %>
+              <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
+                <i class="fa fa-trash"></i></span>
+              <% end %>
 
       </div>
-  </div>
-</div>
+      <div class="col-md-11">
+        <div class="row">
+          <div class="col-md-11">
+            <p><strong>Title: </strong> <%= @message.name %></p>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-11">
+            <p> <%= @message.content %></p>
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-md-11">
+            <p><strong>created at:</strong> <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+          </div>
+        </div>
+      </div>
+
+<!-- BLOG SECTION ENDS    -->
 
 <div class="messages">
   <div class="container">
@@ -90,9 +84,51 @@
   </div>
 </div>
 <% end %>
-
-
-
-
-
+</div>
 <%= render "todos/todoLayoutBottom" %>
+
+
+
+
+
+
+<!-- BLOG SECTION     -->
+  <div class="row ">
+    <div class="col-md-1">
+      <%= link_to new_message_path, class:"btn btn-xs btn-success" do %>
+      <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
+        <i class="fa fa-plus"></i></span>
+      <% end %>
+
+    </div>
+    <div class="col-md-11">
+      <p><strong>Title: </strong> <%= @message.name %></p>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-md-1">
+      <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary", data: { modal: true } do %>
+            <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
+            <i class="fa fa-pencil"></i></span>
+            <% end %>
+    </div>
+    <div class="col-md-11">
+      <p> <%= @message.content %></p>
+    </div>
+  </div>
+
+  <div class="row ">
+    <div class="col-md-1">
+      <%= link_to @message, method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
+      <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
+        <i class="fa fa-trash"></i></span>
+      <% end %>
+    </div>
+    <div class="col-md-11">
+      <p><strong>created at:</strong> <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+    </div>
+  </div>
+
+<!-- BLOG SECTION ENDS    -->
