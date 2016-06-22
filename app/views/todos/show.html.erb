@@ -1,6 +1,13 @@
 <%= render "todoNav" %>
 <%= render "todoLayoutTop" %>
 
+<ul class="nav nav-tabs" role="tablist">
+  <li >
+    <%= link_to "View list", todos_path %>
+  </li>
+  <li class="active"><%= link_to "View todo", new_todo_path %></li>
+</ul>
+
 <p id="notice"><%= notice %></p>
 <div class="container container-fluid">
   <h2>Todo</h2>
