@@ -6,32 +6,32 @@
   <div class="sub-nav">
     <ul class="nav nav-tabs" role="tablist">
       <li>
-        <%= link_to "Blogs", messages_path %>
-      </li>
-      <li class="active"><%= link_to "Blog View", @message %></li>
-    </ul>
-  </div>
+      <%= link_to "Blogs", messages_path %>
+    </li>
+    <li class="active"><%= link_to "Blog View", @message %></li>
+  </ul>
+</div>
 
 <%= render "todos/todoLayoutTop" %>
-  <!-- BLOG SECTION     -->
-    <div class="row ">
-      <div class="col-md-1">
+<!-- BLOG SECTION     -->
+<div class="row ">
+  <div class="col-md-1">
 
-        <%= link_to new_message_path, class:"btn btn-xs btn-success top-buffer" do %>
-        <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
-          <i class="fa fa-plus"></i></span><br>
+  <%= link_to new_message_path, class:"btn btn-xs btn-success top-buffer" do %>
+  <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
+    <i class="fa fa-plus"></i></span><br>
+    <% end %>
+
+    <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary top-buffer", data: { modal: true } do %>
+    <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
+      <i class="fa fa-pencil"></i></span><br>
+      <% end %>
+
+      <%= link_to @message, method: :delete,
+      data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger top-buffer" do %>
+      <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
+        <i class="fa fa-trash"></i></span>
         <% end %>
-
-        <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary top-buffer", data: { modal: true } do %>
-              <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
-              <i class="fa fa-pencil"></i></span><br>
-              <% end %>
-
-        <%= link_to @message, method: :delete,
-                      data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger top-buffer" do %>
-              <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
-                <i class="fa fa-trash"></i></span>
-              <% end %>
 
       </div>
       <div class="col-md-11">
@@ -51,84 +51,43 @@
           </div>
         </div>
       </div>
+    </div>
+      <!-- BLOG SECTION ENDS    -->
+        <!-- COMMENT SECTION   -->
+      <div class="messages">
+        <div class="container">
+          <h2>Comments</h2>
+          <% @message.comments.each do |comment| %>
+          <div class="message">
+            <p class="content">name: <%= comment.commenter %></p>
+            <p class="content">comment: <%= comment.body %></p>
+            <p class="content">created: <%= comment.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
-<!-- BLOG SECTION ENDS    -->
+      <%= simple_form_for ([@message, @message.comments.build]) do |f| %>
+      <div class="field form-group ">
 
-<div class="messages">
-  <div class="container">
-    <h2>Comments</h2>
-    <% @message.comments.each do |comment| %>
-    <div class="message">
-      <p class="content">name: <%= comment.commenter %></p>
-    	<p class="content">comment: <%= comment.body %></p>
-      <p class="content">created: <%= comment.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.input :commenter, label: false, placeholder: 'name', class: 'form-control' %>
+        </div>
+      </div>
+      <div class=" row">
+        <div class="col-md-4">
+          <%= f.input :body, label: false, placeholder: 'comment',:input_html => {:rows => 5, :cols => 20}, class: 'form-control' %>
+        </div>
+      </div>
+      <div class=" row">
+        <div class="col-md-2">
+        <%= f.submit "Create", class:'btn btn-success', value:"Comment" %>
+      </div>
+    </div>
     </div>
     <% end %>
-  </div>
-</div>
+    <!-- COMMENT SECTION ENDS    -->
 
-<%= simple_form_for ([@message, @message.comments.build]) do |f| %>
-<div class="field form-group ">
-  <div class="row">
-    <div class="col-md-2">
-      <%= f.input :commenter, label: false, placeholder: 'name', class: 'form-control' %>
-    </div>
-    <div class="col-md-2">
-      <%= f.submit "Create", class:'btn btn-success' %>
-    </div>
-  </div>
-  <div class=" row">
-    <div class="col-md-4">
-      <%= f.input :body, label: false, placeholder: 'comment',:input_html => {:rows => 5, :cols => 20}, class: 'form-control' %>
-    </div>
-  </div>
-</div>
-<% end %>
-</div>
 <%= render "todos/todoLayoutBottom" %>
-
-
-
-
-
-
-<!-- BLOG SECTION     -->
-  <div class="row ">
-    <div class="col-md-1">
-      <%= link_to new_message_path, class:"btn btn-xs btn-success" do %>
-      <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
-        <i class="fa fa-plus"></i></span>
-      <% end %>
-
-    </div>
-    <div class="col-md-11">
-      <p><strong>Title: </strong> <%= @message.name %></p>
-    </div>
-  </div>
-
-  <div class="row ">
-    <div class="col-md-1">
-      <%= link_to edit_message_path(@message), class: "btn btn-xs btn-primary", data: { modal: true } do %>
-            <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
-            <i class="fa fa-pencil"></i></span>
-            <% end %>
-    </div>
-    <div class="col-md-11">
-      <p> <%= @message.content %></p>
-    </div>
-  </div>
-
-  <div class="row ">
-    <div class="col-md-1">
-      <%= link_to @message, method: :delete,
-              data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
-      <span class="has-tooltip" data-toggle="tooltip" title="Delete Message" >
-        <i class="fa fa-trash"></i></span>
-      <% end %>
-    </div>
-    <div class="col-md-11">
-      <p><strong>created at:</strong> <%= @message.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
-    </div>
-  </div>
-
-<!-- BLOG SECTION ENDS    -->

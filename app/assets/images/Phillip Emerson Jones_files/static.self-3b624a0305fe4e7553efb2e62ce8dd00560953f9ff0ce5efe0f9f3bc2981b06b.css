@@ -1,0 +1,418 @@
+/* line 5, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.pj_about {
+  background-image: url(/assets/frenchwork2-d64c4b1b721f8e61c3325853a9995470c2b449e948fc3f5b44cd3f9ac84f8d5b.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+/* Toggle Styles */
+/* line 16, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 24, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#wrapper.toggled {
+  padding-left: 150px;
+}
+
+/* line 28, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 150px;
+  width: 0;
+  height: 100%;
+  margin-left: -150px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 43, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#wrapper.toggled #sidebar-wrapper {
+  width: 150px;
+}
+
+/* line 47, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 400px;
+  padding-top: 200px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 56, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -150px;
+}
+
+/* Sidebar Styles */
+/* line 67, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav {
+  font-family: helvetica, sans-serif;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 77, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+/* line 82, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+/* line 88, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 93, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.dropdown li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+/* line 99, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.dropdown li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* line 104, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+ul.dropdown-menu-static {
+  background-color: #000;
+}
+
+/* line 107, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+/* line 112, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+/* line 118, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+/* line 122, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+/* line 127, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+#sidebar-wrapper #social_sidebar_button {
+  position: absolute;
+  list-style-type: none;
+  display: inline-block;
+  bottom: 0;
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* line 136, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.icon-menu {
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* line 147, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.icon-menu i {
+  margin-right: 5px;
+}
+
+@media (min-width: 768px) {
+  /* line 152, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #wrapper {
+    padding-left: 150px;
+  }
+
+  /* line 156, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  /* line 160, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #sidebar-wrapper {
+    width: 150px;
+  }
+
+  /* line 164, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  /* line 168, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+
+  /* line 173, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+/* line 178, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 178, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social > :first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* line 179, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-lg {
+  padding-left: 61px;
+}
+
+/* line 179, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-lg > :first-child {
+  line-height: 45px;
+  width: 45px;
+  font-size: 1.8em;
+}
+
+/* line 180, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-sm {
+  padding-left: 38px;
+}
+
+/* line 180, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-sm > :first-child {
+  line-height: 28px;
+  width: 28px;
+  font-size: 1.4em;
+}
+
+/* line 181, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-xs {
+  padding-left: 30px;
+}
+
+/* line 181, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social.btn-xs > :first-child {
+  line-height: 20px;
+  width: 20px;
+  font-size: 1.2em;
+}
+
+/* line 182, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 34px;
+  width: 34px;
+  padding: 0;
+}
+
+/* line 182, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon > :first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* line 183, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-lg {
+  padding-left: 61px;
+}
+
+/* line 183, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-lg > :first-child {
+  line-height: 45px;
+  width: 45px;
+  font-size: 1.8em;
+}
+
+/* line 184, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-sm {
+  padding-left: 38px;
+}
+
+/* line 184, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-sm > :first-child {
+  line-height: 28px;
+  width: 28px;
+  font-size: 1.4em;
+}
+
+/* line 185, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-xs {
+  padding-left: 30px;
+}
+
+/* line 185, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-xs > :first-child {
+  line-height: 20px;
+  width: 20px;
+  font-size: 1.2em;
+}
+
+/* line 186, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon > :first-child {
+  border: none;
+  text-align: center;
+  width: 100% !important;
+}
+
+/* line 187, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-lg {
+  height: 45px;
+  width: 45px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 188, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-sm {
+  height: 30px;
+  width: 30px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 189, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-social-icon.btn-xs {
+  height: 22px;
+  width: 22px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 190, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 190, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
+  color: #fff;
+  background-color: #2d4373;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 191, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
+  background-image: none;
+}
+
+/* line 192, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-facebook.disabled, .btn-facebook[disabled], fieldset[disabled] .btn-facebook, .btn-facebook.disabled:hover, .btn-facebook[disabled]:hover, fieldset[disabled] .btn-facebook:hover, .btn-facebook.disabled:focus, .btn-facebook[disabled]:focus, fieldset[disabled] .btn-facebook:focus, .btn-facebook.disabled:active, .btn-facebook[disabled]:active, fieldset[disabled] .btn-facebook:active, .btn-facebook.disabled.active, .btn-facebook[disabled].active, fieldset[disabled] .btn-facebook.active {
+  background-color: #3b5998;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 193, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-facebook .badge {
+  color: #3b5998;
+  background-color: #fff;
+}
+
+/* line 194, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-linkedin:active, .btn-linkedin.active, .open > .dropdown-toggle.btn-linkedin {
+  background-image: none;
+}
+
+/* line 195, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-linkedin.disabled, .btn-linkedin[disabled], fieldset[disabled] .btn-linkedin, .btn-linkedin.disabled:hover, .btn-linkedin[disabled]:hover, fieldset[disabled] .btn-linkedin:hover, .btn-linkedin.disabled:focus, .btn-linkedin[disabled]:focus, fieldset[disabled] .btn-linkedin:focus, .btn-linkedin.disabled:active, .btn-linkedin[disabled]:active, fieldset[disabled] .btn-linkedin:active, .btn-linkedin.disabled.active, .btn-linkedin[disabled].active, fieldset[disabled] .btn-linkedin.active {
+  background-color: #007bb6;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 196, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-twitter {
+  color: #fff;
+  background-color: #55acee;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 196, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-twitter:hover, .btn-twitter:focus, .btn-twitter:active, .btn-twitter.active, .open > .dropdown-toggle.btn-twitter {
+  color: #fff;
+  background-color: #2795e9;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 197, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-twitter:active, .btn-twitter.active, .open > .dropdown-toggle.btn-twitter {
+  background-image: none;
+}
+
+/* line 198, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-twitter.disabled, .btn-twitter[disabled], fieldset[disabled] .btn-twitter, .btn-twitter.disabled:hover, .btn-twitter[disabled]:hover, fieldset[disabled] .btn-twitter:hover, .btn-twitter.disabled:focus, .btn-twitter[disabled]:focus, fieldset[disabled] .btn-twitter:focus, .btn-twitter.disabled:active, .btn-twitter[disabled]:active, fieldset[disabled] .btn-twitter:active, .btn-twitter.disabled.active, .btn-twitter[disabled].active, fieldset[disabled] .btn-twitter.active {
+  background-color: #55acee;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 199, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/static.scss */
+.btn-twitter .badge {
+  color: #55acee;
+  background-color: #fff;
+}

@@ -1,0 +1,10 @@
+/* line 5, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/todos.scss */
+.has-tooltip {
+  cursor: pointer;
+}
+
+/* line 8, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/todos.scss */
+.top-buffer {
+  margin-top: 20px;
+  margin-right: 20px;
+}

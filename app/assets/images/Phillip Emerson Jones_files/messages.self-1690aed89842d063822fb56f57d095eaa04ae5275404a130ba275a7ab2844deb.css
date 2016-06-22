@@ -1,0 +1,6 @@
+/* line 5, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/messages.scss */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

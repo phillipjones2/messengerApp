@@ -1,0 +1,113 @@
+/* line 5, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.contact_body {
+  background-color: #495A6B;
+}
+
+/* line 9, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.jumbotron-1 {
+  position: relative;
+  background: #000 url(/assets/mountain-78a11a3c0217cb282c82d34d84960794c396422d8f9c47bd47d2e08b2f580bda.jpg) center center;
+  width: 100%;
+  height: 850px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* line 17, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.jumbo-h1 {
+  padding-top: 50px;
+}
+
+/* line 20, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.about-pic {
+  padding-top: 100px;
+  border-radius: 100%;
+}
+
+/* line 24, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.about-arrow {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+}
+
+/* line 29, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.navbar {
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
+}
+
+/* line 34, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.navbar li {
+  color: #000;
+}
+
+/* line 35, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.jumbotron-2 {
+  margin-top: -29px;
+  position: relative;
+  background: #000 url(/assets/apartments-5f6641265625be26590b5232fc03526d010f5dd4c4210ae803f4a563b043be72.jpg) center center;
+  width: 100%;
+  height: 850px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* line 44, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.portfolio {
+  padding-top: 20px;
+  font-size: 50px;
+}
+
+/* line 48, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.portfolio-img {
+  height: 250px;
+  width: 250px;
+}
+
+/* line 52, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.portfolio-img1 {
+  height: 250px;
+  width: 250px;
+  background: #000 url("http://gdriv.es/pjimg/01.jpg");
+  color: black;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-family: monospace;
+}
+
+/* line 61, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.portfolio-img2 {
+  height: 250px;
+  width: 250px;
+  background: #000 url("http://gdriv.es/pjimg/02.jpg");
+  color: black;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-family: monospace;
+}
+
+/* line 70, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.jumbotron-3 {
+  position: relative;
+  background: #000 url(/assets/bluewall-23071f299a87b44a33dcf45a0cfe3314f550e97134d220397258ab2bc9e27d68.jpg) center center;
+  width: 100%;
+  height: 850px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* line 78, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.contact_form {
+  padding-top: 90px;
+}
+
+/* line 81, /Users/phillipjones/workspace/messengerApp/app/assets/stylesheets/contacts.scss */
+.email_error {
+  opacity: 0.6;
+  background: rgba(255, 0, 0, 0.3);
+  color: black;
+  padding-left: 20px;
+  border-radius: 5px;
+}
