@@ -54,16 +54,20 @@
     </div>
       <!-- BLOG SECTION ENDS    -->
         <!-- COMMENT SECTION   -->
+
       <div class="messages">
         <div class="container">
           <h2>Comments</h2>
           <% @message.comments.each do |comment| %>
-          <div class="message">
-            <p class="content">name: <%= comment.commenter %></p>
-            <p class="content">comment: <%= comment.body %></p>
-            <p class="content">created: <%= comment.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+          <div class="panel panel-default">
+            <div class="message">
+              <p class="content comment_show comment_show_top">name: <%= comment.commenter %></p>
+              <p class="content comment_show">comment: <%= comment.body %></p>
+              <p class="content comment_show">created: <%= comment.created_at.strftime("%A %b %d %Y %I:%M %p %Z") %></p>
+            </div>
           </div>
           <% end %>
+
         </div>
       </div>
 
