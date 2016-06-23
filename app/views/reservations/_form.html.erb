@@ -4,15 +4,15 @@
     <div class="form-inputs">
       <div class="row">
         <div class="col-md-3">
-          <%= f.input :name %>
+          <%= f.input :name, label: "Name" %>
         </div>
         <div class="col-md-2">
-          <%= f.input :num_tables, input_html: { min: '1', max: '10' } %>
+          <%= f.input :num_tables, label: "Number of Tables", input_html: { min: '1', max: '10' } %>
         </div>
       </div>
       <div class="row">
         <div class="col-md-2 date_field">
-          <%= f.date_field :reservation_date %>
+          <%= f.date_field :reservation_date, label: "Reservation Date" %>
         </div>
         <div class="col-md-1 time_field">
           <%= f.select :reservation_time, [['Midnight',1],
