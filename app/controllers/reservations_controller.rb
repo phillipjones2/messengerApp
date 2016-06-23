@@ -24,7 +24,15 @@ class ReservationsController < ApplicationController
   # POST /reservations
   # POST /reservations.json
   def create
+  #  dt = DateTime.strptime(reservation_params[:reservation_date] + ' ' + reservation_params[:reservation_time],'%Y-%m-%d %H')
+
     @reservation = Reservation.new(reservation_params)
+    #( name:reservation_params[:name],
+    #                                reservation_date:reservation_params[:reservation_date],
+  #                                  reservation_time:reservation_params[:reservation_time],
+  #                                  num_tables:reservation_params[:num_tables],
+  #                                  reservation_datetime:dt)
+
 
     respond_to do |format|
       if @reservation.save
@@ -71,6 +79,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:name, :reservation_date, :reservation_time, :num_tables)
+      params.require(:reservation).permit(:name, :reservation_date, :reservation_time, :num_tables, :reservation_datetime)
     end
 end

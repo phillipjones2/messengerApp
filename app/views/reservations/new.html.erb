@@ -15,17 +15,15 @@
   <thead>
     <tr>
       <th class="col-md-2">Name</th>
-      <th class="col-md-1">Date</th>
-      <th class="col-md-1">Time</th>
+      <th class="col-md-1">Date/ Time</th>
       <th class="col-md-1">Table Count</th>
     </tr>
   </thead>
   <tbody>
-    <% Reservation.all.each do |r| %>
+    <% Reservation.all.order('reservation_datetime').each do |r| %>
     <tr>
       <td><%= r.name %></td>
       <td><%= r.reservation_date %></td>
-      <td><%= r.reservation_time %></td>
       <td><%= r.num_tables %></td>
     </tr>
     <% end %>

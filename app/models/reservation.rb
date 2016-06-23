@@ -1,12 +1,12 @@
 class Reservation < ActiveRecord::Base
-  before_save :check_availability
-
   TOTAL_TABLES = 10
 
   validates :name, presence: true
   validates :reservation_date, presence: true
   validates :reservation_time, presence: true
   validates :num_tables, presence: true
+
+  before_save :check_availability
 
   private
 
