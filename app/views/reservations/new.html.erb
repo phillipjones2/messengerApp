@@ -1,7 +1,9 @@
+
 <% content_for :title do %>PEJ reservation app<% end %>
+<% content_for :body_class, "reservation_body" %>
 <%= render "todos/todoNav" %>
 
-<div class="container">
+<div class="container reservation_container">
   <div class="jumbotron">
     <h1>New Reservation</h1>
     <%= render 'form' %>

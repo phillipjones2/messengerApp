@@ -1,33 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+
 
 <h1>Listing Reservations</h1>
 
-<table>
+<br>
+<table class="table table-responsive table-bordered table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Reservation date</th>
-      <th>Reservation time</th>
-      <th>Num tables</th>
+      <th class="col-md-2">Name</th>
+      <th class="col-md-1">Date</th>
+      <th class="col-md-1">Time</th>
+      <th class="col-md-1">Table Count</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @reservations.each do |reservation| %>
-      <tr>
-        <td><%= reservation.name %></td>
-        <td><%= reservation.reservation_date %></td>
-        <td><%= reservation.reservation_time %></td>
-        <td><%= reservation.num_tables %></td>
-        <td><%= link_to 'Show', reservation %></td>
-        <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
-        <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @reservations.each do |r| %>
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.reservation_date %></td>
+      <td><%= r.reservation_time %></td>
+      <td><%= r.num_tables %></td>
+      <td><%= link_to 'Show', r %></td>
+      <td><%= link_to 'Edit', edit_reservation_path(r) %></td>
+      <td><%= link_to 'Destroy', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
-<%= link_to 'New Reservation', new_reservation_path %>
+
+<%= link_to 'New Reservation', new_reservation_path, class:'btn btn-success' %>
+</div>
