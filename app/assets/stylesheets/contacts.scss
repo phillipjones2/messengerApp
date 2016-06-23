@@ -1,7 +1,9 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@media only screen and (max-device-width: 480px) {
+    background: #000 image-url('mountain_small.jpeg')center center;
+}
 .contact_body {
   background-color: #495A6B
 }
