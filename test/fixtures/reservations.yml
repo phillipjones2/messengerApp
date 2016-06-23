@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  reservation_date: MyString
+  reservation_time: MyString
+  num_tables: 1
+
+two:
+  name: MyString
+  reservation_date: MyString
+  reservation_time: MyString
+  num_tables: 1

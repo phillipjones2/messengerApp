@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :reservations
   root :to => "contacts#new"
   resources :contacts, only: [:new, :create]
 

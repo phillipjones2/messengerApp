@@ -1,0 +1,32 @@
+<% content_for :title do %>PEJ reservation app<% end %>
+<%= render "todos/todoNav" %>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>New Reservation</h1>
+    <%= render 'form' %>
+  </div>
+
+
+
+<table class="table table-responsive table-bordered table-hover">
+  <thead>
+    <tr>
+      <th class="col-md-2">Name</th>
+      <th class="col-md-1">Date</th>
+      <th class="col-md-1">Time</th>
+      <th class="col-md-1">Table Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Reservation.all.each do |r| %>
+    <tr>
+      <td><%= r.name %></td>
+      <td><%= r.reservation_date %></td>
+      <td><%= r.reservation_time %></td>
+      <td><%= r.num_tables %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
