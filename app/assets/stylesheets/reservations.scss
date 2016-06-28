@@ -14,11 +14,29 @@
 }
 
  .reservation_body {
-  background-color: #D6E2EF;
+  //background-color: #AAC6E2;
 
-  //#000 image-url('cork.jpg')center center;
+  background: #000 image-url('cork.jpg')center center;
 
 }
 .reservation_container {
-  background-color: #AAC6E2;
+
+  border-radius: 5px;
+}
+
+.reservation_jumbo {
+
+}
+.reservation_table {
+  background-color: #D6E2EF;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+ .reservation_table, td {
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   padding: 5px;
+ }
+.todo_nav {
+  margin-top: -1px;
 }
