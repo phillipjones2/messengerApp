@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
 
+<% content_for :title do %>PEJ | Reservation<% end %>
+<% content_for :body_class, "reservation_body" %>
+<p id="notice"><%= notice %></p>
 <p>
   <strong>Name:</strong>
   <%= @reservation.name %>
@@ -10,6 +12,7 @@
   <%= @reservation.reservation_date %>
 </p>
 
+  
 <p>
   <strong>Reservation time:</strong>
   <%= @reservation.reservation_time %>
