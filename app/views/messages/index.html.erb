@@ -17,7 +17,7 @@
 
 <!-- BLOG ENTRY -->
   <% @messages.each do |message| %>
-  <div class="panel panel-default">
+  <div class="panel panel-default blog_entry_box">
     <div class="row ">
       <div class="col-md-1">
         <%= link_to message, class: "btn btn-xs btn-primary top-buffer-index-top" do %>
@@ -32,13 +32,13 @@
             data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger top-buffer-index" do %>
             <span class="has-tooltip" data-toggle="tooltip" title="Delete Blog" >
             <i class="fa fa-trash"></i></span><% end %>
-        <%= link_to new_message_path, class:"btn btn-xs btn-success top-buffer-index" do %>
+        <%= link_to new_message_path, class:"btn btn-xs btn-success bottom-buffer-index" do %>
             <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
             <i class="fa fa-plus"></i></span><% end %>
       </div>
       <div class="col-md-11 ">
         <div class="row">
-          <div class="col-md-11">
+          <div class="col-md-11 blog_entry_top">
             <p><strong>Title: </strong> <%= message.name %></p>
           </div>
         </div>
@@ -50,12 +50,10 @@
         <div class="row">
           <div class="col-md-11">
             <p><strong>Comments: </strong>
-              <% if message.comments.count == 1 %>
-                Yes. There is <%= message.comments.count %> comments.</p>
-              <% elsif message.comments.count > 1 %>
-                Yes. There are <%= message.comments.count %> comments.</p>
+              <% if message.comments.count > 1 %>
+                Yes. <%= message.comments.count %> comments.</p>
               <% else %>
-                No. There are no comments.</p>
+                No comments.</p>
             <% end %>
           </p>
           </div>

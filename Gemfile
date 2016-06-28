@@ -23,6 +23,7 @@ gem 'font-awesome-rails'
 gem 'responders'
 gem 'jquery-turbolinks'
 gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

@@ -6,15 +6,16 @@
         <div class="col-md-3">
           <%= f.input :name, label: "Name" %>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3 col-sm-4">
           <%= f.input :num_tables, label: "Number of Tables", input_html: { min: '1', max: '10' } %>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 date_field">
-          <%= f.date_field :reservation_date, label: "Reservation Date" %>
+        <div class="col-md-3  col-sm-4 date_field">
+          <%= f.input_field :reservation_date, as: :string, placeholder: "Reservation Date",
+                      label: false, class:'datepicker' %>
         </div>
-        <div class="col-md-1 time_field">
+        <div class="col-md-2 col-md-offset-1 col-sm-4 time_field">
           <%= f.select :reservation_time, [['Midnight',1],
                                            ['1 AM',1],['2 AM',2],['3 AM',3],['4 AM',4],['5 AM',5],['6 AM',6],
                                            ['7 AM',7],['8 AM',8],['9 AM',9],['10 AM',10],['11 AM',11],
