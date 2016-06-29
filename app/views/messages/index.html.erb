@@ -20,21 +20,24 @@
   <div class="panel panel-default blog_entry_box">
     <div class="row ">
       <div class="col-md-1">
-        <%= link_to message, class: "btn btn-xs btn-primary top-buffer-index-top" do %>
-          <span class="has-tooltip" data-toggle="tooltip" title="Show Blog" >
-          <i class="fa fa-eye"></i></span><% end %>
 
-        <%= link_to edit_message_path(message), class: "btn btn-xs btn-primary top-buffer-index", data: { modal: true } do %>
-          <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
-          <i class="fa fa-pencil"></i></span><% end %>
+          <%= link_to message, class: "btn btn-xs btn-primary show-icon" do %>
+            <span class="has-tooltip" data-toggle="tooltip" title="Show Blog" >
+              <i class="fa fa-eye"></i></span><% end %>
 
-        <%= link_to message, method: :delete,
-            data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger top-buffer-index" do %>
+          <%= link_to edit_message_path(message), class: "btn btn-xs btn-primary edit-icon", data: { modal: true } do %>
+            <span class="has-tooltip" data-toggle="tooltip" title="Edit Blog" >
+              <i class="fa fa-pencil"></i></span><% end %>
+
+          <%= link_to message, method: :delete,
+            data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger delete-icon" do %>
             <span class="has-tooltip" data-toggle="tooltip" title="Delete Blog" >
             <i class="fa fa-trash"></i></span><% end %>
-        <%= link_to new_message_path, class:"btn btn-xs btn-success bottom-buffer-index" do %>
+
+        <%= link_to new_message_path, class:"btn btn-xs btn-success create-icon" do %>
             <span class="has-tooltip" data-toggle="tooltip" title="Create New Blog" >
             <i class="fa fa-plus"></i></span><% end %>
+
       </div>
       <div class="col-md-11 ">
         <div class="row">
