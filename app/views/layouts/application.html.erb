@@ -7,7 +7,7 @@
   <meta name="author" content="Phillip Emerson Jones"/>
   <meta name="Description" content="Practicing basic HTML, CSS, and Javascript."/>
   <meta name="keywords" content="web developer, software developer, ruby on rails, programming, portfolio"/>
-  <title><%= content_for?(:title) ? yield(:title) : "Phillip Emerson Jones" %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -21,7 +21,6 @@
 
 </head>
 <body class="<%= yield (:body_class) %>">
-
 
     <div class="row">
       <div class="col-xs-12">
