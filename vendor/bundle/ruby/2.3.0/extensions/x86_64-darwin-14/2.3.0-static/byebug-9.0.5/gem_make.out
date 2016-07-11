@@ -1,0 +1,19 @@
+current directory: /Users/phillipjones/workspace/messengerApp/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+/Users/phillipjones/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20160708-32235-1ybvy41.rb extconf.rb
+creating Makefile
+
+current directory: /Users/phillipjones/workspace/messengerApp/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/phillipjones/workspace/messengerApp/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/phillipjones/workspace/messengerApp/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20160708-32235-1mphqk1/byebug
